@@ -12,7 +12,7 @@ const login = asyncHandler(async (req, res) => {
     return res.status(404).json({ message: "Requested user not found" });
   }
 
-  const isValidPass = bcrypt.compareSync(password, user.password);
+  const isValidPass = bcrypt.compare(password, user.password);
 
   if (!isValidPass) {
     return res.status(401).json({ message: "invalid credentials" });
