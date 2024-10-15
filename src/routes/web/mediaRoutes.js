@@ -1,12 +1,12 @@
 const { avatar, product } = require("../../controllers/web/mediaController");
-const { avatarUpload } = require("../../utils/multer");
+const { avatarUpload, productUpload } = require("../../utils/multer");
 
 const router = require("express").Router();
 
 router.post("/avatar", avatarUpload.single("avatar"), avatar);
 router.post(
   "/product",
-  avatarUpload.fields([
+  productUpload.fields([
     { name: "image", maxCount: 1 },
     { name: "images", maxCount: 3 },
   ]),

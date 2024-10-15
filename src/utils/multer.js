@@ -31,7 +31,7 @@ const avatarStorage = multer.diskStorage({
 const productStorage = multer.diskStorage({
     destination: getDestination('products'),
     filename: generateFilename(),
-})
+});
 
 const avatarUpload = multer({ storage: avatarStorage });
 const productUpload = multer({storage: productStorage});
