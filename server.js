@@ -1,12 +1,12 @@
 const express = require("express");
-const routes = require("./src/routes");
-require("dotenv").config();
-const errorHandler = require("./src/middlewares/errorHandler");
-const cors = require("cors");
 const app = express();
+require("dotenv").config();
+const cors = require("cors");
 const http = require('http');
 const server = http.createServer(app);
 const io = require('./config/socket');
+const errorHandler = require("./src/middlewares/errorHandler");
+const routes = require("./src/routes");
 
 io(server);
 
